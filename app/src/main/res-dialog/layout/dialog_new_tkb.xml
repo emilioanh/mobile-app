@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:layout_width="385dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_edge">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thêm mới thời khóa biểu"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textColor="@color/black" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Vui lòng nhập đầy đủ thông tin bên dưới"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#888" />
+    <EditText
+        android:id="@+id/edt_subj"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/round_border"
+        android:hint="Tên môn học"
+        android:textColorHint="#888"
+        android:textColor="@color/black"
+        android:paddingLeft="15dp"/>
+    <EditText
+        android:id="@+id/edt_room"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/round_border"
+        android:hint="Phòng học"
+        android:textColorHint="#888"
+        android:textColor="@color/black"
+        android:paddingLeft="15dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:weightSum="10">
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/btn_cancel_tkb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-0.75dp"
+            android:layout_weight="5"
+            android:background="@drawable/cancel_ios"
+            android:text="Hủy"
+            android:textColor="#29abf2"/>
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/btn_add_tkb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-0.75dp"
+            android:layout_weight="5"
+            android:background="@drawable/ok_ios"
+            android:text="Thêm"
+            android:textColor="#29abf2"/>
+    </LinearLayout>
+</LinearLayout>

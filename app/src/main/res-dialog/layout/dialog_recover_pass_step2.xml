@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="385dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_edge"
+    android:orientation="vertical"
+    android:paddingTop="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Lấy lại mật khẩu"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Bước 2: Kiểm tra mail và nhập mã xác thực đã được cung cấp."
+        android:textColor="#888"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edt_mssv"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/round_border"
+        android:hint="Mã xác thực"
+        android:paddingLeft="15dp"
+        android:textColorHint="#888"
+        android:textColor="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:weightSum="10">
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/btn_cancel_tkb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-0.75dp"
+            android:layout_weight="5"
+            android:background="@drawable/cancel_ios"
+            android:text="Quay lại"
+            android:textColor="#29abf2"/>
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/btn_add_tkb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-0.75dp"
+            android:layout_weight="5"
+            android:background="@drawable/ok_ios"
+            android:text="Tiếp tục"
+            android:textColor="#29abf2"/>
+    </LinearLayout>
+</LinearLayout>
