@@ -136,6 +136,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         dialog2.show();
+//        Dialog dialog2 = new Dialog(this);
+//        dialog2.setContentView(R.layout.dialog_recover_pass_step2);
+//        dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//        EditText edtmssv =  dialog2.findViewById(R.id.edt_verify_code);
+//        Button btnreturn = dialog2.findViewById(R.id.btn_return_step2);
+//        Button btncontinue = dialog2.findViewById(R.id.btn_continue_step2);
+//        btncontinue.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(getApplicationContext(), "Địt con mẹ mày Phát!", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        Dialog dialog2 = new Dialog(this);
+//        dialog2.setContentView(R.layout.dialog_recover_pass_step3);
+//        dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//        EditText edtnewpwd =  dialog2.findViewById(R.id.edt_new_pwd);
+//        EditText edtconfirm =  dialog2.findViewById(R.id.edt_confirm_pwd);
+//        Button btnreturn = dialog2.findViewById(R.id.btn_return_step3);
+//        Button btnchangepwd = dialog2.findViewById(R.id.btn_change_pwd);
+//        btnchangepwd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(getApplicationContext(), "Địt con mẹ mày Phát!", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        dialog2.show();
     }
 }
 
