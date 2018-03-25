@@ -107,20 +107,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showDialog(){
-        Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.dialog_new_tkb);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        EditText edtsubj =  dialog.findViewById(R.id.edt_subj);
-        EditText edtroom =  dialog.findViewById(R.id.edt_room);
-        Button btnadd = dialog.findViewById(R.id.btn_add_tkb);
-        Button btncancel = dialog.findViewById(R.id.btn_cancel_tkb);
-        btnadd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Địt con mẹ mày Phát!", Toast.LENGTH_SHORT).show();
-            }
-        });
-        dialog.show();
+//        Dialog dialog = new Dialog(this);
+//        dialog.setContentView(R.layout.dialog_new_tkb);
+//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//        EditText edtsubj =  dialog.findViewById(R.id.edt_subj);
+//        EditText edtroom =  dialog.findViewById(R.id.edt_room);
+//        Button btnadd = dialog.findViewById(R.id.btn_add_tkb);
+//        Button btncancel = dialog.findViewById(R.id.btn_cancel_tkb);
+//        btnadd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(getApplicationContext(), "Địt con mẹ mày Phát!", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        dialog.show();
+        TKBAddDialog add_tkb_dialog = new TKBAddDialog();
+        add_tkb_dialog.show(getFragmentManager(),"add_tkb");
     }
 
     private void step1(){
