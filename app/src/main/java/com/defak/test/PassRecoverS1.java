@@ -14,7 +14,7 @@ import android.widget.EditText;
  */
 
 public class PassRecoverS1 extends DialogFragment{
-    EditText masv;
+    EditText mailsv;
     Button cont;
 
     @Override
@@ -32,12 +32,17 @@ public class PassRecoverS1 extends DialogFragment{
 
     private void mapping(){
         View view = getDialog().getWindow().getDecorView();
-        masv = view.findViewById(R.id.edt_mssv);
+        mailsv = view.findViewById(R.id.edt_mailsv);
         cont = view.findViewById(R.id.btn_continue);
 
         cont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String email = mailsv.getText().toString().trim();
+                String subject = "PTIT App - Verification code for new password";
+                String message = "Hi "+ email +",\nYou have recently requested for new password since you forgot yours.\nHere is your verification code: concac\nPlease input into our app to verify your request.";
+                SendMail sm = new SendMail(getActivity(), email, subject, message);
+                sm.execute();
                 PassRecoverS2 step2 = new PassRecoverS2();
                 step2.show(getFragmentManager(),"rec_pass_2");
             }

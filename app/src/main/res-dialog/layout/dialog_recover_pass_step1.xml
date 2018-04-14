@@ -24,7 +24,7 @@
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/edt_mssv"
+        android:id="@+id/edt_mailsv"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
