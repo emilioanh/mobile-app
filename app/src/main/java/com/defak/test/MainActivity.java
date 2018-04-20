@@ -3,6 +3,7 @@ package com.defak.test;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -83,7 +84,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        lv_shit.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                clientArrayList.remove(i);
+                clientAdapter.notifyDataSetChanged();
+            }
+        });
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,6 +131,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void changePass(){
         PassRecoverS1 step1 = new PassRecoverS1();
+        Bundle args = new Bundle();
+        args.putString("fuck", "cai lol que");
+        step1.setArguments(args);
         step1.show(getFragmentManager(),"rec_pass_1");
     }
 }
