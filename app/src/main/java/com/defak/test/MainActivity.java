@@ -1,6 +1,12 @@
 package com.defak.test;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
         String addr;
         String state;
     }
+
+    private NotificationCompat.Builder notBuilder;
+
+    private static final int MY_NOTIFICATION_ID = 12345;
+
+    private static final int MY_REQUEST_CODE = 100;
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
@@ -45,6 +57,11 @@ public class MainActivity extends AppCompatActivity {
         clientArrayList = new ArrayList<>();
         // Example of a call to a native method
         clientAdapter = new ClientAdapter(this, R.layout.client, clientArrayList);
+
+        this.notBuilder = new NotificationCompat.Builder(this);
+
+        this.notBuilder.setAutoCancel(true);
+
         buttonEvent();
         lv_shit.setAdapter(clientAdapter);
 
@@ -125,8 +142,38 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 //        dialog.show();
-        TKBAddDialog add_tkb_dialog = new TKBAddDialog();
-        add_tkb_dialog.show(getFragmentManager(),"add_tkb");
+//        TKBAddDialog add_tkb_dialog = new TKBAddDialog();
+//        add_tkb_dialog.show(getFragmentManager(),"add_tkb");
+        this.notBuilder.setSmallIcon(R.mipmap.ic_launcher);
+        this.notBuilder.setTicker("This is a ticker");
+
+        // Sét đặt thời điểm sự kiện xẩy ra.
+        // Các thông báo trên Panel được sắp xếp bởi thời gian này.
+        this.notBuilder.setWhen(System.currentTimeMillis()+ 10* 1000);
+        this.notBuilder.setContentTitle("Thông báo đổi lớp:");
+        this.notBuilder.setContentText("Lớp được chuyển qua...");
+
+        // Tạo một Intent
+        Intent intent = new Intent(this, MainActivity.class);
+
+
+        // PendingIntent.getActivity(..) sẽ start mới một Activity và trả về
+        // đối tượng PendingIntent.
+        // Nó cũng tương đương với gọi Context.startActivity(Intent).
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, MY_REQUEST_CODE,
+                intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+
+        this.notBuilder.setContentIntent(pendingIntent);
+
+        // Lấy ra dịch vụ thông báo (Một dịch vụ có sẵn của hệ thống).
+        NotificationManager notificationService  =
+                (NotificationManager)this.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        // Xây dựng thông báo và gửi nó lên hệ thống.
+
+        Notification notification =  notBuilder.build();
+        notificationService.notify(MY_NOTIFICATION_ID, notification);
     }
 
     private void changePass(){
